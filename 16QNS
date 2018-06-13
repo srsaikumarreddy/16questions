@@ -1,0 +1,356 @@
+Q1)
+
+var d=new Date();
+console.log(d.getDate()+ "/"+d.getMonth()+ "/"+d.getFullYear());
+
+output:12/5/2018
+
+------------------------------------------------------------------------------------------
+
+Q2)function max(a)
+{ 
+  var max=-100;
+  for(var i=0;i<5;i++)
+   {
+      if(a[i]>max)
+       max=a[i];
+   }
+   console.log(max);
+}
+
+max([12,324,65,875,432]);
+
+Output: 
+875
+------------------------------------------------------------------------------------------
+Q3)
+
+function dashes(num)
+{
+	 var x=num.toString();
+	 var str=x[0];
+	 for(var i=1;i<x.length;i++)
+	 {
+	   if((x[i-1]%2==0)&&(x[i]%2==0))
+        {str+='-'+x[i];}
+        else 
+       { str+=x[i];}
+	 }
+   console.log(str);
+}
+
+dashes(1232460);
+
+OUTPUT
+1232-4-6-0
+------------------------------------------------------------------------------------------
+Q4)
+
+function sorts(x)
+{ 
+
+var res=fruits.sort();
+console.log(res);
+var rev=res.reverse();
+console.log(rev);
+}
+
+sorts(["Banana","Apple","Chikoo","Mango","Kiwi"]);
+------------------------------------------------------------------------------------------
+Q5)
+function dup(arr)
+{
+
+var mySet = new Set();
+
+for(var i=0;i<arr.length;i++)
+ {
+    mySet.add(arr[i]);
+ }
+
+  console.log(mySet);
+}
+
+dup([32,32,58,67,67,69]);
+
+OUTPUT
+32,58,67,69
+------------------------------------------------------------------------------------------
+Q6)
+  function differ(A,B)
+  {
+
+diff = A.filter(function(x) { return B.indexOf(x) < 0 });
+diff1=B.filter(function(x) { return A.indexOf(x) < 0 });
+
+
+var cat=diff1.concat(diff);
+var final=new Set(cat);
+console.log(final);
+}
+differ([1, 2,5,5, 3,9, 4],[1, 3, 4,6, 7]);
+
+output
+
+Set { 6, 7, 2, 5, 9 }
+------------------------------------------------------------------------------------------
+Q7)
+
+var library = [
+{ author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254},
+{ author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264},
+{ author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245}
+];
+
+
+function sorts(x)
+{ 
+   x.sort(function(a,b){  
+    var x = a.title.toLowerCase();
+    var y = b.title.toLowerCase();
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;})
+  
+  console.log(x);
+    
+}
+
+sorts(library);	
+
+OUTPUT
+
+[ { author: 'Suzanne Collins',
+    title: 'Mockingjay: The Final Book of The Hunger Games',
+    libraryID: 3245 },
+  { author: 'Bill Gates',
+    title: 'The Road Ahead',
+    libraryID: 1254 },
+  { author: 'Steve Jobs',
+    title: 'Walter Isaacson',
+    libraryID: 4264 } ]
+------------------------------------------------------------------------------------------
+Q8)
+
+function valid_email(str)
+{
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+    if(mailformat.test(str))
+    {  
+    console.log("Valid email address!");  
+    }  
+    else  
+    {  
+    console.log("You have entered an invalid email address!");  
+    }
+}
+
+   valid_email("srsaikumarreddy@gmail.com");
+   valid_email("srsai@gom");
+
+ Output:
+
+ Valid email address!
+ You have entered an invalid email address!
+------------------------------------------------------------------------------------------
+ Q9)
+ var student = {
+name : "David Rayy",
+sclass : "VI",
+rollno : 12 };
+
+console.log(Object.keys(student));
+
+OUTPUT
+[ 'name', 'sclass', 'rollno' ]
+------------------------------------------------------------------------------------------
+Q10)
+var students = [['David', 80], ['Vinoth', 77], ['Divya', 88], ['Ishitha', 95], ['Thomas', 68]];
+var Avgmarks = 0;
+for (var i=0; i < students.length; i++) {
+        Avgmarks += students[i][1];
+      
+}
+  var avg = (Avgmarks/students.length);
+console.log("Average marks: " + avg);
+ 
+      for(var i=0;i<students.length;i++)
+      {
+        if (students[i][1] < 60){
+          console.log("Grade for " + students[i][0] +":F");      
+          } 
+        else if (students[i][1]< 70) {
+                console.log("Grade for " + students[i][0]+": D"); 
+                  } 
+        else if (students[i][1] < 80) 
+             {
+                console.log("Grade for " + students[i][0]+":C"); 
+        } else if (students[i][1] < 90) {
+                console.log("Grade for " + students[i][0]+": B"); 
+        } else if (students[i][1] < 100) {
+                console.log("Grade for " + students[i][0]+": A"); 
+        }
+      }  
+
+ OUTPUT:
+ Average marks: 81.6
+Grade for David: B
+Grade for Vinoth:C
+Grade for Divya: B
+Grade for Ishitha: A
+Grade for Thomas: D
+------------------------------------------------------------------------------------------
+Q11)function arrange(strings)
+{
+  var len=strings.length;
+  var a =strings.split("");
+  a.sort();
+  var x=a.join();
+  console.log(x);
+}
+arrange("webmaster");
+
+OUTPUT:abeemrstw
+------------------------------------------------------------------------------------------
+Q12)
+
+function count(strings,letter)
+{
+
+
+var count = 0;
+var pos = strings.indexOf(letter);
+
+while (pos !== -1) {
+ count++;
+ pos = strings.indexOf(letter, pos + 1);
+}
+
+console.log(count);
+}
+count("gmail.com","m");
+
+output:2
+------------------------------------------------------------------------------------------
+Q13)
+var myObj = [5, [22], [[14]], [[4]],[5,6]];
+
+function flatten(arr)
+{  
+     
+   var res=arr.toString().split(",");
+   console.log(res);
+}
+
+flatten(myObj);
+
+output
+[ '5', '22', '14', '4', '5', '6' ]
+
+------------------------------------------------------------------------------------------
+Q14)
+var myObj =
+[{'name':'Saurabh', 'age': 30, 'occupation': "Team Leader"},
+{'name':'Anupriya', 'age': 32, 'occupation': "Team Leader"},
+{'name':'Kalyani', 'age': 25, 'occupation': "Programmer"},
+{'name':'Damodaran', 'age': 27, 'occupation': "Programmer"},
+{'name':'Krishnakath', 'age': 22, 'occupation': "Programmer"},
+{'name':'Venketraman', 'age': 28, 'occupation': "Programmer"}];
+-----------------------------------------------------------------------
+A))))))
+
+for(var i=0;i<myObj.length;i++)
+{
+if(myObj[i].occupation=="Team Leader")
+console.log(myObj[i]);
+}
+
+OUTPUT
+
+{ name: 'Saurabh', age: 30, occupation: 'Team Leader' }
+{ name: 'Anupriya', age: 32, occupation: 'Team Leader' }
+--------------------------------------------------------------------------
+B)))))))))))))
+
+myObj.sort(function(a,b){
+    return b.age- a.age;
+})
+console.log(myObj);
+
+OUTPUT
+
+[ { name: 'Anupriya', age: 32, occupation: 'Team Leader' },
+  { name: 'Saurabh', age: 30, occupation: 'Team Leader' },
+  { name: 'Venketraman', age: 28, occupation: 'Programmer' },
+  { name: 'Damodaran', age: 27, occupation: 'Programmer' },
+  { name: 'Kalyani', age: 25, occupation: 'Programmer' },
+  { name: 'Krishnakath', age: 22, occupation: 'Programmer' } ]
+
+----------------------------------------------------------------------------
+C))))))
+
+var newObj={}
+for (var z of myObj){
+    newObj[z['occupation']]=[];}
+for(var z of myObj)
+{ var obj = {
+    "name": z['name'],
+    "age" : z['age']};
+
+  newObj[z['occupation']].push(obj);
+}
+console.log(newObj);
+
+OUTPUT
+
+
+{ 'Team Leader': [ { name: 'Saurabh', age: 30 }, { name: 'Anupriya', age: 32 } ],
+  Programmer: 
+   [ { name: 'Kalyani', age: 25 },
+     { name: 'Damodaran', age: 27 },
+     { name: 'Krishnakath', age: 22 },
+     { name: 'Venketraman', age: 28 } ] }
+
+---------------------------------------------------------------------------------
+D)))))
+
+function getName(item, index) {
+    var name = [item.name].join(" ");
+    return name;
+}
+
+console.log(myObj.map(getName));
+
+Output:
+--------------
+
+[ 'Saurabh',
+  'Anupriya',
+  'Kalyani',
+  'Damodaran',
+  'Krishnakath',
+  'Venketraman' ]
+------------------------------------------------------------------------------------------
+Q15)
+
+
+var jsonStr = '{"mike":"Book","jason":"sweater","chels":"iPad"}';
+var jsonob=JSON.parse(jsonStr);
+console.log(jsonob.mike)
+
+OUTPUT:
+Book
+------------------------------------------------------------------------------------------
+Q16)
+var obj = {
+"One":"1",
+"Two":"2",
+"Three":"3",
+"Four":"4"
+}
+
+var jsob=JSON.stringify(obj);
+console.log(jsob);
+
+OUTPUT
+{"One":"1","Two":"2","Three":"3","Four":"4"}
